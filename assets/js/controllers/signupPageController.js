@@ -14,7 +14,7 @@ angular.module('brushfire').controller('signupPageController', ['$scope', '$http
     // $http.post('/user/signup', {
 
     // Submit a POST request to /user [This is using blueprints.]
-    $http.post('/user/signup', {
+    $http.post('/user', {
       email: $scope.signupForm.email,
       username: $scope.signupForm.username.replace(/\s+/g, '-'),
       password: $scope.signupForm.password
