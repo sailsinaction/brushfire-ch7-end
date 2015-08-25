@@ -17,6 +17,7 @@ angular.module('brushfire').controller('adminUsersPageController', ['$scope', '$
   })
   .catch(function onError(sailsResponse){
 
+    console.log(sailsResponse);
 
   })
   .finally(function eitherWay(){
