@@ -29,7 +29,7 @@ module.exports.bootstrap = function(cb) {
     // List Youtube videos which match the specified search query.
     Youtube.searchVideos({
       query: 'grumpy cat',
-      apiKey: 'AIzaSyCAaj1kE9T_tIKY2sn_Agr1YBdrTAZvVDI',
+      apiKey: 'AIzaSyDtRj9vXVJ_JIgtwU2Xq4F4xrHNupA1pQo',
       limit: 15,
     }).exec({
       // An unexpected error occurred.
