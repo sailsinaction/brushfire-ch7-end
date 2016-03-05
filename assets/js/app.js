@@ -7,12 +7,12 @@
 //     });
 
 angular.module('brushfire', ['ngRoute', 'toastr', 'compareTo'])
-  .config(function($sceDelegateProvider) {
+  .config(['$sceDelegateProvider', function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
       'self',
       '*://www.youtube.com/**'
     ]);
-  })
+  }])
 
 .filter('spaceless', function() {
   return function(input) {
