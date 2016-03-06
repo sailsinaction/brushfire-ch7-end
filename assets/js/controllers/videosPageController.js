@@ -136,9 +136,6 @@ angular.module('brushfire').controller('videosPageController', [
         // angular-specific magical promisy-thing)
         $scope.$apply();
       });
-
-
     };
-
   }
 ]);

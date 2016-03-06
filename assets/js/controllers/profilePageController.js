@@ -25,17 +25,13 @@ angular.module('brushfire').controller('profilePageController', ['$location', '$
   // Submit GET request to /user/profile/:id
   $http.get(theRoute)
   .then(function onSuccess(sailsResponse){
-    // console.log('sailsResponse.data.deleted: ', sailsResponse.data.deleted);
-    // console.log('sailsResponse: ', sailsResponse);
 
     // If deleted profile remove interface and show message.
     if (sailsResponse.data.deleted === true) {
       $scope.userProfile.errorMsg = 'No profile found.';
       return $scope.userProfile.noProfile = true;
     }
-    // console.log(sailsResponse.data.id);
     // window.location = '#/profile/' + sailsResponse.data.id;
-    // console.log('The response is: ', sailsResponse);
     $scope.userProfile.properties.email = sailsResponse.data.email;
     $scope.userProfile.properties.username = sailsResponse.data.username;
     $scope.userProfile.properties.admin = sailsResponse.data.admin;
@@ -46,7 +42,6 @@ angular.module('brushfire').controller('profilePageController', ['$location', '$
     $scope.userProfile.loading = false;
   })
   .catch(function onError(sailsResponse){
-    // console.log(sailsResponse);
 
     // If no profile found remove interface and show error message.    
     if(sailsResponse.status === 404) {
@@ -65,25 +60,17 @@ angular.module('brushfire').controller('profilePageController', ['$location', '$
 
   $scope.removeProfile = function() {
 
-    // console.log('the change userprofile is: ', $scope.userProfile);
-
     var theRoute = '/user/removeProfile/' + $scope.userProfile.properties.id;
     $http.put(theRoute, {
         deleted: true
       })
       .then(function onSuccess(sailsResponse) {
 
-        // console.log('sailsResponse: ', sailsResponse);
-          // $scope.userProfile.properties.gravatarURL = sailsResponse.data.gravatarURL;
           window.location = '#/signup';
-          // 
-          // toastr.success('Password Updated!');
 
         $scope.userProfile.loading = false;
       })
       .catch(function onError(sailsResponse) {
-        // console.log('sailsresponse: ', sailsResponse)
-        // Otherwise, display generic error if the error is unrecognized.
         $scope.userProfile.errorMsg = 'An unexpected error occurred: ' + (sailsResponse.data || sailsResponse.status);
 
       })
@@ -104,5 +91,4 @@ angular.module('brushfire').controller('profilePageController', ['$location', '$
       $scope.userProfile.errorMsg = 'An unexpected error occurred: ' + err;
     });
   };
-
 }]);

@@ -44,5 +44,4 @@ angular.module('brushfire').controller('signupPageController', ['$scope', '$http
       $scope.signupForm.loading = false;
     });
   };
-
 }]);
