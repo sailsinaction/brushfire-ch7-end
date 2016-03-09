@@ -29,6 +29,8 @@ angular.module('brushfire').controller('signupPageController', ['$scope', '$http
     })
     .catch(function onError(sailsResponse){
 
+      console.log(sailsResponse.data.invalidAttributes);
+
     // Handle known error type(s).
     if (sailsResponse.status == 409) {
       toastr.error(sailsResponse.data);
@@ -36,8 +38,13 @@ angular.module('brushfire').controller('signupPageController', ['$scope', '$http
       return;
     }
 
+    if (sailsResponse.data.invalidAttributes) {
+      $scope.signupForm.errorMsg = 'An unexpected error occurred: ' + (JSON.stringify(sailsResponse.data.invalidAttributes));
+      return;
+    }
+
     // Handle unknown error type(s).
-    $scope.signupForm.errorMsg = 'An unexpected error occurred: ' + (sailsResponse.data || sailsResponse.status);
+    $scope.signupForm.errorMsg = 'An unexpected error occurred: ' + (JSON.stringify(sailsResponse.data) || sailsResponse.status);
 
     })
     .finally(function eitherWay(){
