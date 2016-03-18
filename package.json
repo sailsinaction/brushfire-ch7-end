@@ -1,8 +1,8 @@
 {
-  "name": "brushfire-chp6-end",
+  "name": "brushfire-chp7-end",
   "private": true,
   "version": "0.0.0",
-  "description": "Sails in Action - End of Chapter 6 Source Files",
+  "description": "Sails in Action - End of Chapter 7 Source Files",
   "keywords": [],
   "dependencies": {
     "ejs": "2.3.4",

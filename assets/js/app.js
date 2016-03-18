@@ -19,8 +19,8 @@ angular.module('brushfire', ['ngRoute', 'toastr', 'compareTo', 'ngPatternRestric
     controller: 'signupPageController'
   })
 
-    .when('/administration', {
-    templateUrl: '/templates/adminUsers.html',
+  .when('/administration', {
+    templateUrl: '/templates/admin-users.html',
     controller: 'adminUsersPageController'
   })
 
@@ -39,7 +39,7 @@ angular.module('brushfire', ['ngRoute', 'toastr', 'compareTo', 'ngPatternRestric
     controller: 'editProfilePageController'
   })
 
-  .when('/restore', {
+  .when('/restore-profile', {
     templateUrl: '/templates/restore-profile.html',
     controller: 'restorePageController'
   });
