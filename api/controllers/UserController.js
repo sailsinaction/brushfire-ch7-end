@@ -10,10 +10,6 @@ var Gravatar = require('machinepack-gravatar');
 
 module.exports = {
 
-  foo: function(req, res) {
-    return res.alreadyInUse('yaya');
-  },
-
   signup: function(req, res) {
 
     // email is required

@@ -4,6 +4,8 @@ module.exports = function alreadyInUse (err){
   // (since the arguments are up to us)
   var res = this.res;
 
+  console.log('res: ', res);
+
   if (err.invalidAttributes.email) {
     return res.send(409, 'Email address is already taken by another user, please try again.');
   }
